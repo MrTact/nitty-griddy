@@ -1,13 +1,18 @@
 {
   "name": "Nitty Griddy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "manifest_version": 2,
   "description": "This extension provides an overlay for elements styled with CSS Grid",
   "homepage_url": "https://github.com/stephanmax/nitty-griddy",
   "minimum_chrome_version": "29",
   "background": {
+    "persistent": false,
     "scripts": ["js/background.js"]
   },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["js/content.js"]
+  }],
   "icons": {
     "16": "icons/icon-tiny.png",
     "48": "icons/icon-small.png",
