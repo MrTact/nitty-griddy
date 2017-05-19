@@ -19,7 +19,6 @@ function gridOverlay() {
   var borderSize = 2;
 
   _computedStyles = window.getComputedStyle(gridContainer);
-  console.log(_computedStyles);
 
   if (JSON.stringify(_computedStyles) === JSON.stringify(computedStyles)) {
     return;
