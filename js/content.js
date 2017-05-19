@@ -24,7 +24,7 @@ function gridOverlay() {
     return;
   }
   else {
-    computedStyles = _computedStyles;
+    computedStyles = Object.assign({}, _computedStyles);
   }
 
   if (overlayContainer) {
