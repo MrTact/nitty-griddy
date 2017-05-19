@@ -18,9 +18,10 @@ function gridOverlay() {
   var positionBackup;
   var borderSize = 2;
 
-  _computedStyles = window.getComputedStyle(gridContainer);
+  _computedStyles = Object.assign({}, window.getComputedStyle(gridContainer));
 
   if (JSON.stringify(_computedStyles) === JSON.stringify(computedStyles)) {
+    window.requestAnimationFrame(gridOverlay);
     return;
   }
   else {
@@ -111,6 +112,8 @@ function gridOverlay() {
   });
 
   gridContainer.appendChild(overlayContainer);
+
+  window.requestAnimationFrame(gridOverlay);
 }
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
@@ -120,8 +123,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     });
 
     if (gridContainer) {
-      gridOverlay();
-      setInterval(gridOverlay, 500);
+      window.requestAnimationFrame(gridOverlay);
     }
   }
 });
