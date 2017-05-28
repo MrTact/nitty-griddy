@@ -75,6 +75,8 @@ function gridOverlay() {
     pointer-events: none; \
     box-sizing: content-box; \
     position: absolute; \
+    margin: 0; \
+    padding: 0;\
     z-index: 99999; \
     top: " + (pxToNumber(computedStyles.paddingTop) + horContainerOffset - borderSize) + "px; \
     right: " + (pxToNumber(computedStyles.paddingRight) + vertContainerOffset - borderSize) + "px; \
@@ -89,6 +91,8 @@ function gridOverlay() {
     overlayBar = document.createElement('div');
     overlayBar.style = "background-color: rgba(255, 255, 0, .7); \
       position: absolute; \
+      margin: 0; \
+      padding: 0;\
       top:" + vertBarOffset + "px; \
       right: 0; \
       left: 0; \
@@ -103,6 +107,8 @@ function gridOverlay() {
     overlayBar = document.createElement('div');
     overlayBar.style = "background-color: rgba(255, 255, 0, .7); \
       position: absolute; \
+      margin: 0; \
+      padding: 0;\
       top: 0; \
       bottom: 0; \
       left: " + horBarOffset + "px; \
